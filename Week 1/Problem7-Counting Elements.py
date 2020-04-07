@@ -35,7 +35,7 @@ class Solution:
                 continue
         return count
 
-#Solution2
+#Solution2 (using hashset)
 
 class Solution:
     def countElements(self, arr: List[int]) -> int:
@@ -47,4 +47,17 @@ class Solution:
                 count+=1
             else:
                 continue
+        return count
+
+#Solution3 (using dictionary)
+
+class Solution:
+    def countElements(self, arr: List[int]) -> int:
+        d = {}
+        for i in arr:
+            d[i] = 1
+        count = 0
+        for x in arr:
+            if x+1 in d:
+                count+=1
         return count
