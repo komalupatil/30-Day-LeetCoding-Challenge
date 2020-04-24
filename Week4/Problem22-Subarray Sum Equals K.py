@@ -19,8 +19,8 @@ class Solution:
         
         for i in range(len(nums)):
             contSum += nums[i]
-            if contSum-k in d:
-                count += d[contSum-k]
+            if contSum-k in d:  ##difference between sum and k means that subarray exists
+                count += d[contSum-k] 
             if contSum in d:
                 d[contSum] +=1
             else:
