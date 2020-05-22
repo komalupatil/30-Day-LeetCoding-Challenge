@@ -58,3 +58,25 @@ class Solution:
                     res += char
         return res        
         
+
+#Solution2
+
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        if len(s) == 0:
+            return ""
+        
+        d = {}
+        
+        for char in s:
+            if char in d:
+                d[char] += 1
+            else:
+                d[char] = 1
+                
+        s_new = sorted(d, key=lambda x: d[x], reverse=True)
+        res = ""
+        for char in s_new:
+            res += char*d[char]
+            
+        return res
